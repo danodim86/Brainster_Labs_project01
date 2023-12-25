@@ -1,0 +1,79 @@
+@use "./variables" as var;
+@use "sass:math";
+
+// RESPONSIVE MIXINS
+@mixin big-screen-2300-styles {
+  @media (min-width: 2300px) {
+    @content;
+  }
+}
+
+@mixin big-screen-2000-styles {
+  @media (min-width: 2000px) {
+    @content;
+  }
+}
+
+@mixin big-screen-1900-styles {
+  @media (min-width: 1900px) {
+    @content;
+  }
+}
+
+@mixin lg-992-styles {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tablet-styles {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin screen-600-styles{
+  @media (max-width: 600px){
+    @content;
+  }
+}
+
+@mixin mobile-l-styles {
+  @media (max-width: 426px) {
+    @content;
+  }
+}
+
+%section {
+  padding-top: (var.$gutter-base * 5);
+  padding-bottom: (var.$gutter-base * 5);
+
+  @include big-screen-1900-styles{
+    padding-top: (var.$gutter-base * 6);
+  padding-bottom: (var.$gutter-base * 6);
+  }
+
+  @include screen-600-styles{
+    padding-top: (var.$gutter-base * 4);
+  padding-bottom: (var.$gutter-base * 4);
+  }
+
+  // @include tablet-styles {
+  //   padding-top: (var.$gutter-base);
+  //   padding-bottom: (var.$gutter-base);
+  // }
+}
+
+%wrapper {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include tablet-styles {
+    width: 80%;
+  }
+
+  @include screen-600-styles{
+    width: 90%;
+  }
+}

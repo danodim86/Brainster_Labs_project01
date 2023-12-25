@@ -1,0 +1,59 @@
+@use "../../abstracts/mixins" as mix;
+@use "../../abstracts/variables" as var;
+@use "sass:math";
+
+.index-header .banner{
+  background-image: linear-gradient(150deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)) ,url(../images/banner.jpg);
+  height: calc(100vh - 250.21px);
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mix.big-screen-2000-styles{
+    height: calc(100vh - 323.69px);
+  }
+
+  @media only screen and (max-width: 1470px){
+    height: calc(100vh - 238.21px);
+  }
+  @media only screen and (max-width: 1248px){
+    height: calc(100vh - 262.21px);
+  }
+  @media only screen and (max-width: 1013px){
+    height: calc(100vh - 271.5px);
+  }
+
+  @include mix.lg-992-styles{
+    height: calc(100vh - 143.6px);
+  }
+
+  @media only screen and (max-width: 892px){
+    height: calc(100vh - 161.6px);
+  }
+  @media only screen and (max-width: 700px){
+    height: calc(100vh - 314.4px);
+  }
+  @media only screen and (max-width: 369px){
+    height: calc(100vh - 383.6px);
+  }
+
+
+  h1{
+    color: var.$text-color-primary;
+    font-size: var.$heading-size-bigger*1.2;
+    font-weight: bolder;
+    text-align: center;
+
+    @include mix.big-screen-2000-styles{
+      font-size: var.$heading-size-bigger*2;
+    }
+
+    @include mix.tablet-styles{
+      font-size: var.$heading-size-bigger*0.7;
+    }
+  }
+}

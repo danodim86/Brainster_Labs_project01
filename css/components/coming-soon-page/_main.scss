@@ -1,0 +1,153 @@
+@use "../../abstracts/mixins" as mix;
+@use "../../abstracts/variables" as var;
+@use "sass:math";
+
+
+#coming-soon-main{
+  background-color: var.$background-color-hire-students;
+  background-image: linear-gradient(150deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../images/banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 199.21px);
+  padding: var.$gutter-base*3 0px;
+
+  @include mix.big-screen-2000-styles{
+    height: calc(100vh - 262.19px);
+  }
+
+  @include mix.lg-992-styles{
+    height: calc(100vh - 146.6px);
+  }
+
+  @include mix.mobile-l-styles{
+    height: calc(100vh - 142.1px);
+  }
+
+  .main-section{
+    width: 65%;
+    margin: 0 auto;
+    color: var.$text-color-primary;
+    border-radius: 4px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var.$half-gutter-base;
+    text-align: center;
+
+    @include mix.screen-600-styles{
+      width: 90%;
+    }
+
+    h1{
+      font-size: var.$heading-size-bigger;
+      font-weight: bolder;
+      @include mix.big-screen-1900-styles{
+        font-size: var.$heading-size-bigger*1.4;
+      }
+      @include mix.big-screen-2300-styles{
+        font-size: var.$heading-size-bigger*1.8;
+      }
+
+      @include mix.tablet-styles{
+        font-size: var.$heading-size-bigger*0.8;
+      }
+    }
+
+    h2{
+      font-size: var.$heading-size-big;
+      font-weight: bolder;
+      @include mix.big-screen-1900-styles{
+        font-size: var.$heading-size-big*1.4;
+      }
+      @include mix.big-screen-2300-styles{
+        font-size: var.$heading-size-big*1.8;
+      }
+      @include mix.tablet-styles{
+        font-size: var.$heading-size-big*0.8;
+      }
+    }
+
+    P{
+      font-size: var.$font-size-big;
+      font-weight: bold;
+      @include mix.big-screen-1900-styles{
+        font-size: var.$font-size-big*1.4;
+      }
+      @include mix.big-screen-2300-styles{
+        font-size: var.$font-size-big*1.8;
+      }
+
+      @include mix.tablet-styles{
+        font-size: var.$font-size-big*0.8;
+      }
+    }
+
+    form{
+      display: flex;
+      gap: var.$half-gutter-base;
+
+      @include mix.screen-600-styles{
+        flex-direction: column;
+      }
+
+      input{
+        padding: var.$half-gutter-base;
+        border: none;
+        border-radius: 7px;
+        &[type="email"]{
+          width: 500px;
+          @include mix.tablet-styles{
+            width: 300px;
+          }
+          
+        }
+        @include mix.big-screen-1900-styles{
+          padding: var.$half-gutter-base*1.5;
+          font-size: var.$font-size-small*1.4;
+        }
+        @include mix.big-screen-2300-styles{
+          padding: var.$half-gutter-base*2.1;
+          font-size: var.$font-size-small*1.8;
+        }
+
+        @include mix.screen-600-styles{
+          padding: var.$half-gutter-base var.$half-gutter-base*0.7;
+        }
+
+        &:focus {
+          outline: none;
+        }
+        &::placeholder{
+          font-style: italic;
+          font-size: var.$font-size-small;
+          @include mix.big-screen-1900-styles{
+            font-size: var.$font-size-small*1.4;
+          }
+          @include mix.big-screen-2300-styles{
+            font-size: var.$font-size-small*1.8;
+          }
+        }
+      } 
+
+      input[type="submit"]{
+        background-color: var.$background-color-quaternary;
+        color: var.$text-color-primary;
+        @include mix.big-screen-1900-styles{
+          font-size: var.$font-size-base*1.4;
+        }
+        @include mix.big-screen-2300-styles{
+          font-size: var.$font-size-base*1.8;
+        }
+
+        &:hover{
+          background-color: rgb(240, 2, 2);
+        }
+      }
+    }
+  }
+}

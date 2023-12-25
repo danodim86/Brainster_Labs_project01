@@ -1,0 +1,232 @@
+@use "../../abstracts/mixins" as mix;
+@use "../../abstracts/variables" as var;
+@use "sass:math";
+
+.cards-container{
+  @extend %section;
+  background-color: var.$background-color-base;
+  color: var.$text-color-base;
+  position: relative;
+
+  & > h2{
+    font-size: var.$heading-size-big*1.1;
+    position: absolute;
+    font-weight: bolder;
+    top: var.$gutter-base * 3;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include mix.big-screen-1900-styles{
+      font-size: var.$heading-size-big*2;
+    }
+
+    @include mix.screen-600-styles{
+      left: 5%;
+      transform: translate(0%, -50%);
+      top: var.$gutter-base * 2;
+      font-size: var.$heading-size-big*0.8;
+    }
+  }
+
+  .wrapper{
+    @extend %wrapper;
+  }
+
+  .flex{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: math.div(var.$gutter-base, -1);
+    margin-bottom: math.div(var.$gutter-base, -1);
+
+    @include mix.screen-600-styles{
+      margin-right: 0;
+    }
+
+    .card-academy{
+      flex-basis: 33.333%;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease-in-out;
+
+      @include mix.lg-992-styles{
+        flex-basis: 50%;
+      }
+
+      @include mix.screen-600-styles{
+        flex-basis: 100%;
+        display: none;
+
+        &:nth-child(1), &:nth-child(2), &:nth-child(3),
+        &:nth-child(4), &:nth-child(5), &:nth-child(6){
+          display: inline-block;
+        }
+      }
+
+      &:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+
+        @include mix.big-screen-1900-styles{
+          transform: scale(1.05);
+        }
+
+        @include mix.screen-600-styles{
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .inner{
+      margin-right: var.$gutter-base;
+      margin-bottom: var.$gutter-base;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.1);
+
+      @include mix.screen-600-styles{
+        margin-right: 0;
+      }
+    
+      img{
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+
+        @include mix.big-screen-1900-styles{
+          height: 300px;
+        }
+
+        @include mix.lg-992-styles{
+          height: 150px;
+        }
+      } 
+
+      .text{
+        padding: var.$half-gutter-base;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var.$half-gutter-base*0.7;
+        background-color: var.$background-color-tertiary;
+
+        .title{
+          background-color: var.$background-color-base;
+          padding: var.$half-gutter-base*0.5;
+          font-size: var.$font-size-small;
+          font-weight: var.$font-weight-bold;
+          margin-bottom: 0;
+          border-radius: 3px;
+          display: inline;
+
+          @include mix.big-screen-1900-styles{
+            font-size: var.$font-size-small*1.5;
+          }
+
+          @include mix.big-screen-2300-styles{
+            font-size: var.$font-size-small*2;
+          }
+        }
+
+        h2{
+          font-size: var.$font-size-big;
+          font-weight: bold;
+          line-height: var.$line-height-base*0.7;
+          margin-bottom: 0;
+
+          @include mix.big-screen-1900-styles{
+            font-size: var.$font-size-big*1.5;
+          }
+
+          @include mix.big-screen-2300-styles{
+            font-size: var.$font-size-big*2;
+          }
+        }
+
+        .description{
+          font-size: var.$font-size-intermediate;
+          margin-bottom: 0;
+
+          @include mix.big-screen-1900-styles{
+            font-size: var.$font-size-intermediate*1.5;
+          }
+
+          @include mix.big-screen-2300-styles{
+            font-size: var.$font-size-intermediate*2;
+          }
+        }
+
+        h3{
+          font-size: var.$font-size-smallest;
+          font-weight: bold;
+
+          @include mix.big-screen-1900-styles{
+            font-size: var.$font-size-smallest*1.5;
+          }
+
+          @include mix.big-screen-2300-styles{
+            font-size: var.$font-size-smallest*2;
+          }
+        }
+
+        button{
+          align-self: flex-end !important;
+          display: inline;
+          border: none;
+          border-radius: 7px;
+          background-color: var.$background-color-quaternary;
+          color: var.$text-color-primary;
+          font-weight: var.$font-weight-bold;
+          font-size: 14px;
+          padding: math.div(var.$gutter-base,3) var.$gutter-base;
+          margin-top: var.$half-gutter-base;
+          cursor: pointer;
+          &:hover{
+            background-color: rgb(240, 2, 2);
+          }
+
+          @include mix.big-screen-1900-styles{
+            font-size: 22px;
+          }
+
+          @include mix.big-screen-2300-styles{
+            font-size: 28px;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  .load-more-container{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #load-more{
+
+      font-weight: bold;
+      background-color: var.$background-color-quaternary;
+      color: var.$text-color-primary;
+      padding: var.$half-gutter-base var.$gutter-base;
+      margin-top: var.$gutter-base*2;
+      border-radius: var.$half-gutter-base;
+      border:none;
+      cursor: pointer;
+      display: none;
+  
+      &:hover{
+        background-color: rgb(240, 2, 2);
+      }
+  
+      @include mix.screen-600-styles{
+        display: inline-block;
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon</title>
+
+  <!-- BOOTSTRAP CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+
+  <!-- CSS FOLDER -->
+  <link rel="stylesheet" href="./css/main.css" />
+
+  <!-- FONT AWESOME LIBRARY -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+   
+  <!-- ==================== BEGINNING OF HEADER ========================= -->
+  <header>
+
+    <!-- ================ NAVBAR ================== -->
+    <nav class="index-navbar navbar navbar-expand-lg py-lg-4">
+      <div class="container-fluid">
+        <!-- navbar logo -->
+        <a class="navbar-brand pe-5" href="./index.html">
+          <div
+            class="d-flex flex-column gap-1 align-items-center justify-content-center"
+          >
+            <img src="./images/Logo.png" alt="logo of brainster lab" />
+            <p class="text-uppercase fw-bold m-0">brainster</p>
+          </div>
+        </a>
+        <!-- navbar toggle button -->
+        <button
+          class="navbar-toggler shadow-none border-0 p-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-filter-right" viewBox="0 0 16 16">
+            <path d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5m0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5m0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5"/>
+          </svg>
+        </button>
+
+        <!-- responsive menu -->
+        <div
+          class="offcanvas offcanvas-start  border-0"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <!-- responsive menu header -->
+          <div class="offcanvas-header justify-content-end">
+            <i class="fa-solid fa-xmark" type="button" data-bs-dismiss="offcanvas"
+            aria-label="Close"></i>
+          </div>
+          <!-- menu body -->
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 gap-4 mb-lg-0 mb-4">
+
+              <li class="nav-item d-flex justify-content-lg-center justify-content-start align-items-center">
+                <a class="nav-link" aria-current="page" href="./coming-soon.html"
+                  >Академија за маркетинг</a
+                >
+              </li>
+
+              <li class="nav-item d-flex justify-content-lg-center justify-content-start align-items-center">
+                <a class="nav-link" href="./coming-soon.html">Академија за програмирање</a>
+              </li>
+
+              <li class="nav-item d-flex justify-content-lg-center justify-content-start align-items-center">
+                <a class="nav-link" href="./coming-soon.html">Академија за data science</a>
+              </li>
+
+              <li class="nav-item d-flex justify-content-lg-center justify-content-start align-items-center">
+                <a class="nav-link" href="./coming-soon.html">Академија за дизајн</a>
+              </li>
+              
+            </ul>
+
+            <!-- hire student button -->
+            <div class="hire-button d-flex justify-content-lg-center justify-content-start align-items-center">
+              <a href="./hire-students.html" class="rounded-3">Вработи наш студент</a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- ==================== BEGINNING OF MAIN =========================-->
+  <main id="coming-soon-main">
+    <section class="main-section">
+      <h1>Доаѓа Наскоро!</h1>
+      <h2>Бидете Во Тек!</h2>
+      <p>Веб-страницата е се уште во pre-launch фаза. Активно работиме на неа, затоа проверете повторно наскоро!</p>
+      <form action="">
+        <input type="email" name="email" id="email" placeholder="Внеси го твојот емајл" required>
+        <input type="submit" value="Извести Ме">
+      </form>
+    </section>
+  </main>
+  
+  <!-- ================= FOOTER ====================== -->
+  <footer class="index-footer">
+    Изработено со  &#129505; од студентите на Brainster
+  </footer>
+
+  <!-- BOOTSTRAP JAVASCRIPT -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>

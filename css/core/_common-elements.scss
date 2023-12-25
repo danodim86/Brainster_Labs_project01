@@ -1,0 +1,17 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+*{
+  font-family: var.$font-family-base;
+}
+
+body {
+  font-weight: var.$font-weight-normal;
+  color: var.$text-color-base;
+}
+
+a{
+  text-decoration: none;
+  color: var.$text-color-base;
+}

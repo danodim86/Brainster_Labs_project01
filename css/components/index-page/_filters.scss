@@ -1,0 +1,74 @@
+@use "../../abstracts/mixins" as mix;
+@use "../../abstracts/variables" as var;
+@use "sass:math";
+
+.active{
+  background-color: var.$background-color-primary !important;
+  color: var.$text-color-base !important;
+}
+
+.filters{
+  display: flex;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+
+  .flex-item{
+    flex-basis: 33.333%;
+    padding: var.$gutter-base;
+    background-color: var.$background-color-secondary;
+    color: var.$text-color-primary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+
+    @include mix.lg-992-styles{
+      padding: var.$half-gutter-base;
+    }
+
+    // &:focus-within{
+    //   background-color: var.$background-color-primary;
+    //   color: var.$text-color-base;
+    // }
+    
+    p{
+      text-align: left;
+      font-size: var.$font-size-big;
+      line-height: var.$line-height-base;
+      font-weight: var.$font-weight-bold;
+      margin-bottom: 0;
+
+      @include mix.big-screen-2000-styles{
+        font-size: var.$font-size-big*1.4;
+      }
+      @media only screen and (max-width: 1470px){
+        font-size: var.$font-size-big*0.8;
+      }
+      @include mix.lg-992-styles{
+        font-size: var.$font-size-big*0.6;
+      }
+      @media only screen and (max-width: 700px) {
+        font-size: var.$font-size-big*0.8;
+      }
+    }
+    i{
+      color: var.$text-color-base;
+      font-size: var.$font-size-big*1.5;
+      margin-left: var.$gutter-base;
+
+      @include mix.lg-992-styles{
+        margin-left: var.$half-gutter-base;
+      }
+    }
+  }
+  & > *:not(:last-child){
+    border-right: 2px solid rgba(83, 83, 83, 0.5);
+    @media only screen and (max-width: 700px){
+      border-right: none;
+      border-bottom: 2px solid rgba(83, 83, 83, 0.5);
+    }
+  }
+}

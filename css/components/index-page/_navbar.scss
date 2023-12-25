@@ -1,0 +1,96 @@
+@use "../../abstracts/mixins" as mix;
+@use "../../abstracts/variables" as var;
+@use "sass:math";
+
+
+.index-navbar{
+  background-color: var.$background-color-base !important;
+  color: var.$text-color-base !important;
+  .container-fluid{
+    width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .navbar-brand{
+    img{
+      width: 50px;
+    }
+    p{
+      font-size: var.$font-size-small;
+    }
+
+    @include mix.lg-992-styles{
+      img{
+        width: 35px;
+      }
+      p{
+        font-size: var.$font-size-smallest-responsive;
+      }
+    }
+
+    @include mix.big-screen-2000-styles{
+      img{
+        width: 90px;
+      }
+      p{
+        font-size: var.$font-size-big;
+      }
+    }
+  }
+
+  svg{
+    width: 50px;
+    height: 50px;
+  }
+  
+  .offcanvas{
+    width: 100%;
+    height: 100vh;
+    @include mix.lg-992-styles{
+      background-color: var.$background-color-secondary;
+    }
+  }
+
+  i{
+    color: white !important;
+    font-size: 40px !important;
+  }
+
+  .nav-link{
+    color: var.$text-color-base;
+    text-align: center;
+    font-weight: bold;
+    font-size: var.$font-size-intermediate;
+
+    @include mix.lg-992-styles{
+      color: var.$text-color-primary;
+    }
+
+    @include mix.big-screen-2000-styles{
+      font-size: var.$font-size-big;
+    }
+  }
+
+  .hire-button{
+    font-size: var.$font-size-intermediate;
+    font-weight: bold;
+    a{
+      color: var.$text-color-primary;
+      background-color: var.$background-color-quaternary;
+      padding: 12px 24px;
+      text-align: center;
+      display: block;
+
+      &:hover{
+        background-color: rgb(240, 2, 2);
+      }
+    }
+
+    @include mix.big-screen-2000-styles{
+      font-size: var.$font-size-big;
+    }
+  }
+}
+
+
